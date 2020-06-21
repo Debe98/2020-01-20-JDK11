@@ -75,6 +75,7 @@ public class Model {
 		
 		for (Integer i : pesi) {
 			List <Artist> lista = new LinkedList<Artist>();
+			lista.add(a);
 			doRicorsione(a, lista, i);
 		}
 		
@@ -108,9 +109,9 @@ public class Model {
 		for (Artist a : viciniCorretti) {
 			DefaultWeightedEdge e = grafo.getEdge(sorgente, a);
 			if (grafo.getEdgeWeight(e) == peso) {
-				percorso.add(sorgente);
+				percorso.add(a);
 				doRicorsione(a, percorso, peso);
-				percorso.remove(sorgente);
+				percorso.remove(a);
 			}
 		}
 	}
